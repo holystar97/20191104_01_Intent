@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_edit_user_info.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,12 @@ class MainActivity : AppCompatActivity() {
 
         nameInputBtn.setOnClickListener {
             var intent=Intent(this,EditUserInfoActivity::class.java)
+
+            if(nameEdt.text.toString() !="이름 입력 필요"){
+                intent.putExtra("userName",nameEdt.text.toString() )
+            }
+            setResult(Activity.RESULT_OK,intent)
+
             startActivityForResult(intent,1000)
 
         }
@@ -26,7 +33,11 @@ class MainActivity : AppCompatActivity() {
 
         if(requestCode ==1000){
             if(resultCode== Activity.RESULT_OK){
-                var inputNameData = data?.getStringExtra("inputName")
+                var inputNameData = data?.getStringExtra("inputName")?.toLowerCase()
+
+                if(inputNameData !=null) {
+
+                }
 
                 inputNameData?.let {
 
