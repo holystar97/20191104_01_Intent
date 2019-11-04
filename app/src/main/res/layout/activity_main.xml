@@ -67,4 +67,15 @@
         android:text="바로 전화 연결"/>
 
 
+    <Button
+        android:id="@+id/smsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="문자 화면 이동"/>
+
+
+
+
+
 </LinearLayout>

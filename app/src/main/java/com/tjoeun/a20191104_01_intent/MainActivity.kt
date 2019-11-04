@@ -46,9 +46,18 @@ class MainActivity : AppCompatActivity() {
 //            var intent=Intent(Intent.ACTION_CALL, uri)
 //            startActivity(intent)
 
+        }
 
+        smsBtn.setOnClickListener {
+
+            var uri = Uri.parse("smsto:01075782970")
+            var intent=Intent(Intent.ACTION_SENDTO,uri)
+            intent.putExtra("sms_body","우리가 만든 앱입니다.")
+            startActivity(intent)
 
         }
+
+
 
     }
 
