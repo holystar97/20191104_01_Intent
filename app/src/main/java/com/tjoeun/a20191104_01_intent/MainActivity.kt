@@ -40,6 +40,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        phoneCallBtn.setOnClickListener {
+//
+//            var uri=Uri.parse("tel:011025292970")
+//            var intent=Intent(Intent.ACTION_CALL, uri)
+//            startActivity(intent)
+
+
+
+        }
 
     }
 
