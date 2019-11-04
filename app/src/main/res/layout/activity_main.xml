@@ -82,6 +82,14 @@
         android:text="네이버로 이동"/>
 
 
+    <Button
+        android:id="@+id/storeLinkBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="카카오톡 앱 다운화면 이동"/>
+
+
 
 
 
