@@ -10,6 +10,21 @@ class EditUserInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_user_info)
 
+        okBtn.setOnClickListener {
+
+            var intent=Intent()
+
+            intent.putExtra("inputName",nameEdt.text.toString())
+
+            setResult(RESULT_OK, intent)
+
+
+
+
+            finish()
+        }
+
+
         cancelBtn.setOnClickListener {
             finish()
         }
