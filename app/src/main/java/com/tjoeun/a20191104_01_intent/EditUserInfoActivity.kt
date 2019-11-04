@@ -19,9 +19,6 @@ class EditUserInfoActivity : AppCompatActivity() {
 
             setResult(RESULT_OK, intent)
 
-
-
-
             finish()
         }
 

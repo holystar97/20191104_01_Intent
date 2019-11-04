@@ -13,13 +13,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        phoneNumInputBtn.setOnClickListener {
+            var intent=Intent(this,EditPhoneNumActivity::class.java)
+            startActivityForResult(intent,1001)
+        }
+
 
         nameInputBtn.setOnClickListener {
             var intent=Intent(this,EditUserInfoActivity::class.java)
 
-            if(nameEdt.text.toString() !="이름 입력 필요"){
-                intent.putExtra("userName",nameEdt.text.toString() )
-            }
+//            if(nameEdt.text.toString() !="이름 입력 필요"){
+//                intent.putExtra("userName",nameEdt.text.toString() )
+//            }
             setResult(Activity.RESULT_OK,intent)
 
             startActivityForResult(intent,1000)
@@ -44,6 +49,17 @@ class MainActivity : AppCompatActivity() {
                     nameTxt.text=it
                 }
             }
+        }
+
+        else if (requestCode ==1001){
+
+            if(resultCode==Activity.RESULT_OK){
+                var phoneNumStr=data?.getStringExtra("inputPhoneNum")
+                phoneNumStr?.let{
+                    phoneNumTxt.text=phoneNumStr
+                }
+            }
+
         }
 
 
